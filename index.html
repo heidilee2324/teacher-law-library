@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>教師法律圖書館｜原書架版</title>
+  <style>
+    body { margin: 0; background: #fffdf7; padding: 12px 8px; }
+    #teacher-library-home { max-width: 1080px; margin-inline: auto; }
+    #teacher-library-home .tl-reference-mark {
+      display: inline-block; width: 16px; height: 16px; background: currentColor;
+      mask: var(--reference-mark) center / contain no-repeat;
+    }
+  </style>
+</head>
+<body>
+<section id="teacher-library-home" lang="zh-Hant" aria-label="教師法律圖書館書架草圖">
+  <header class="tl-header">
+    <button type="button" class="tl-brand" data-home>
+      <span class="tl-reference-mark" aria-hidden="true" style="--reference-mark:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWxpYnJhcnktYmlnIHByZXZpZXctaWNvbiIgYXJpYS1oaWRkZW49InRydWUiIGRhdGEtc2l6ZT0iMTAwMCUiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjE4IiB4PSIzIiB5PSIzIiByeD0iMSI+PC9yZWN0PjxwYXRoIGQ9Ik03IDN2MTgiPjwvcGF0aD48cGF0aCBkPSJNMjAuNCAxOC45Yy4yLjUtLjEgMS4xLS42IDEuM2wtMS45LjdjLS41LjItMS4xLS4xLTEuMy0uNkwxMS4xIDUuMWMtLjItLjUuMS0xLjEuNi0xLjNsMS45LS43Yy41LS4yIDEuMS4xIDEuMy42WiI+PC9wYXRoPjwvc3ZnPg0K)"></span>
+      教師法律圖書館
+    </button>
+    <nav aria-label="主導覽">
+      <button type="button" class="tl-nav" data-breathe>我想先喘口氣 <span aria-hidden="true">↗</span></button>
+    </nav>
+  </header>
+
+  <main class="tl-main" data-main>
+    <div class="tl-intro">
+      <span class="tl-kicker">為教師整理的台灣法規館藏</span>
+      <h1>今天想查什麼？</h1>
+      <p>從書架挑一本書，或直接搜尋法規名稱和你遇到的情況。</p>
+    </div>
+    <form class="tl-search" role="search" aria-label="查館藏">
+      <label>關鍵字
+        <input type="search" name="query" placeholder="例如：調查通知、代理教師、申訴">
+      </label>
+      <label>適用身分
+        <select name="role">
+          <option value="">全部身分</option>
+          <option>正式教師</option>
+          <option>代理教師</option>
+          <option>實習教師</option>
+        </select>
+      </label>
+      <button type="submit" class="tl-primary">查館藏</button>
+    </form>
+    <section class="tl-results" data-results hidden>
+      <button type="button" class="tl-nav" data-clear>返回主題書架</button>
+      <h2 data-result-title>館藏</h2>
+      <p class="tl-result-count" data-result-count aria-live="polite"></p>
+      <ul class="tl-catalog-list" data-result-list></ul>
+    </section>
+    <section class="tl-shelves" data-shelves aria-labelledby="tl-shelves-heading">
+      <h2 id="tl-shelves-heading">主題書架</h2>
+      <div class="tl-book-row">
+        <button type="button" class="tl-book" data-shelf="教師權益">
+          <span class="tl-reference-mark" aria-hidden="true" style="--reference-mark:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJvb2stb3BlbiBwcmV2aWV3LWljb24iIGFyaWEtaGlkZGVuPSJ0cnVlIiBkYXRhLXNpemU9IjEwMDAlIj48cGF0aCBkPSJNMTIgNXYxNiI+PC9wYXRoPjxwYXRoIGQ9Ik0yMC4wMDEgMTlBMiAyIDAgMDAyMiAxN1Y1YTIgMiAwIDAwLTEuOTk5LTJMMTYgMy4wMDJBNSA1IDAgMDAxMiA1YTUgNSAwIDAwLTQtMkg0YTIgMiAwIDAwLTIgMnYxMmEyIDIgMCAwMDEuOTk5IDJIOGE1IDUgMCAwMTQgMiA1IDUgMCAwMTQtMnoiPjwvcGF0aD48L3N2Zz4NCg==)"></span>
+          <strong>教師權益</strong>
+          <span>查聘任、工作權益與適用規定。</span>
+        </button>
+        <button type="button" class="tl-book tl-book-fern" data-shelf="校事會議自保">
+          <span class="tl-reference-mark" aria-hidden="true" style="--reference-mark:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNsaXBib2FyZC1saXN0IHByZXZpZXctaWNvbiIgYXJpYS1oaWRkZW49InRydWUiIGRhdGEtc2l6ZT0iMTAwMCUiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjQiIHg9IjgiIHk9IjIiIHJ4PSIxIiByeT0iMSI+PC9yZWN0PjxwYXRoIGQ9Ik0xNiA0aDJhMiAyIDAgMCAxIDIgMnYxNGEyIDIgMCAwIDEtMiAySDZhMiAyIDAgMCAxLTItMlY2YTIgMiAwIDAgMSAyLTJoMiI+PC9wYXRoPjxwYXRoIGQ9Ik0xMiAxMWg0Ij48L3BhdGg+PHBhdGggZD0iTTEyIDE2aDQiPjwvcGF0aD48cGF0aCBkPSJNOCAxMWguMDEiPjwvcGF0aD48cGF0aCBkPSJNOCAxNmguMDEiPjwvcGF0aD48L3N2Zz4=)"></span>
+          <strong>校事會議自保</strong>
+          <span>查流程、訪談準備與相似案例。</span>
+        </button>
+        <button type="button" class="tl-book tl-book-clay" data-shelf="申訴與救濟">
+          <span class="tl-reference-mark" aria-hidden="true" style="--reference-mark:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNpZ25wb3N0IHByZXZpZXctaWNvbiIgYXJpYS1oaWRkZW49InRydWUiIGRhdGEtc2l6ZT0iMTAwMCUiPjxwYXRoIGQ9Ik0xMiAxM3Y4Ij48L3BhdGg+PHBhdGggZD0iTTEyIDN2MyI+PC9wYXRoPjxwYXRoIGQ9Ik0yLjM1NCAxMC4zNTRhMS4yMDcgMS4yMDcgMCAwIDEgMC0xLjcwOGwyLjA2LTIuMDZBMiAyIDAgMCAxIDUuODI4IDZoMTIuMzQ0YTIgMiAwIDAgMSAxLjQxNC41ODZsMi4wNiAyLjA2YTEuMjA3IDEuMjA3IDAgMCAxIDAgMS43MDhsLTIuMDYgMi4wNmEyIDIgMCAwIDEtMS40MTQuNTg2SDUuODI4YTIgMiAwIDAgMS0xLjQxNC0uNTg2eiI+PC9wYXRoPjwvc3ZnPg==)"></span>
+          <strong>申訴與救濟</strong>
+          <span>查適用身分、程序與期限。</span>
+        </button>
+      </div>
+      <div class="tl-book-row">
+        <button type="button" class="tl-book tl-book-oat" data-shelf="法律協助">
+          <span class="tl-reference-mark" aria-hidden="true" style="--reference-mark:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWhhbmQtaGVhcnQgcHJldmlldy1pY29uIiBhcmlhLWhpZGRlbj0idHJ1ZSIgZGF0YS1zaXplPSIxMDAwJSI+PHBhdGggZD0iTTExIDE0aDJhMiAyIDAgMCAwIDAtNGgtM2MtLjYgMC0xLjEuMi0xLjQuNkwzIDE2Ij48L3BhdGg+PHBhdGggZD0ibTE0LjQ1IDEzLjM5IDUuMDUtNC42OTRDMjAuMTk2IDggMjEgNi44NSAyMSA1Ljc1YTIuNzUgMi43NSAwIDAgMC00Ljc5Ny0xLjgzNy4yNzYuMjc2IDAgMCAxLS40MDYgMEEyLjc1IDIuNzUgMCAwIDAgMTEgNS43NWMwIDEuMi44MDIgMi4yNDggMS41IDIuOTQ2TDE2IDExLjk1Ij48L3BhdGg+PHBhdGggZD0ibTIgMTUgNiA2Ij48L3BhdGg+PHBhdGggZD0ibTcgMjAgMS42LTEuNGMuMy0uNC44LS42IDEuNC0uNmg0YzEuMSAwIDIuMS0uNCAyLjgtMS4ybDQuNi00LjRhMSAxIDAgMCAwLTIuNzUtMi45MSI+PC9wYXRoPjwvc3ZnPg==)"></span>
+          <strong>法律協助</strong>
+          <span>查法律諮詢與因公涉訟協助。</span>
+        </button>
+        <button type="button" class="tl-book tl-book-rust" data-shelf="親師溝通與校園事件">
+          <span class="tl-reference-mark" aria-hidden="true" style="--reference-mark:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1lc3NhZ2VzLXNxdWFyZSBwcmV2aWV3LWljb24iIGFyaWEtaGlkZGVuPSJ0cnVlIiBkYXRhLXNpemU9IjEwMDAlIj48cGF0aCBkPSJNMTYgMTBhMiAyIDAgMCAxLTIgMkg2LjgyOGEyIDIgMCAwIDAtMS40MTQuNTg2bC0yLjIwMiAyLjIwMkEuNzEuNzEgMCAwIDEgMiAxNC4yODZWNGEyIDIgMCAwIDEgMi0yaDEwYTIgMiAwIDAgMSAyIDJ6Ij48L3BhdGg+PHBhdGggZD0iTTIwIDlhMiAyIDAgMCAxIDIgMnYxMC4yODZhLjcxLjcxIDAgMCAxLTEuMjEyLjUwMmwtMi4yMDItMi4yMDJBMiAyIDAgMCAwIDE3LjE3MiAxOUgxMGEyIDIgMCAwIDEtMi0ydi0xIj48L3BhdGg+PC9zdmc+)"></span>
+          <strong>親師溝通與校園事件</strong>
+          <span>從遇到的情況找相關資料。</span>
+        </button>
+        <button type="button" class="tl-book tl-book-sage" data-breathe>
+          <span class="tl-reference-mark" aria-hidden="true" style="--reference-mark:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWxlYWYgcHJldmlldy1pY29uIiBhcmlhLWhpZGRlbj0idHJ1ZSIgZGF0YS1zaXplPSIxMDAwJSI+PHBhdGggZD0iTTExIDIwYTEwIDEwIDAgMDAxMC0xMCAyNS45IDI1LjkgMCAwMC0xLjA0LTcuMjgxIDEgMSAwIDAwLTEuNzU1LS4zMjVDMTUuODMzIDUuNSAxMyA1LjUgOS44IDYuMUE3IDcgMCAwMDExIDIwIj48L3BhdGg+PHBhdGggZD0iTTIgMjFhNSA1IDAgMDEyLjkxMS00LjU0NEM3LjYxMyAxNS4yMTIgOC4zNTEgMTUuMjQgMTEgMTMiPjwvcGF0aD48L3N2Zz4=)"></span>
+          <strong>我想先喘口氣</strong>
+          <span>短暫停一下，看看可以找誰幫忙。</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <main class="tl-main tl-support" data-support hidden>
+    <span class="tl-kicker">支持空間</span>
+    <h1>我想先喘口氣</h1>
+    <p>可以先停一會兒。等準備好了，再回去查你需要的資料。</p>
+    <div class="tl-grid">
+      <section class="tl-tile"><h2>整理現在的感受</h2><span>給自己一點時間，想想目前最需要哪一種支持。</span></section>
+      <section class="tl-tile">
+        <h2>找人說說</h2>
+        <span>教育部主管學校的專任與代理教師可查看教師支持中心的服務。其他學校可向服務學校或教育主管機關查詢所在地的支持窗口。</span>
+        <a class="tl-source" href="https://edu.law.moe.gov.tw/LawContent.aspx?id=GL001997" target="_blank" rel="noopener">教師諮商輔導支持體系設立辦法第 2、6、7 條</a>
+      </section>
+    </div>
+    <button type="button" class="tl-primary" data-home>回圖書館</button>
+  </main>
+</section>
+<style>
+  #teacher-library-home {
+    --tl-paper: #f7f4eb;
+    --tl-ink: #253b32;
+    --tl-muted: #4e6258;
+    --tl-green: #264d3e;
+    --tl-border: #d1d9ce;
+    --tl-white: #fffdf7;
+    color: var(--tl-ink);
+    background: var(--tl-paper);
+    border: 1px solid var(--tl-border);
+    border-radius: 18px;
+    font: 15px/1.55 "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  }
+  #teacher-library-home [hidden] { display: none !important; }
+  #teacher-library-home * { box-sizing: border-box; }
+  #teacher-library-home button, #teacher-library-home input, #teacher-library-home select { font: inherit; }
+  #teacher-library-home button { color: inherit; }
+  #teacher-library-home button:focus-visible, #teacher-library-home input:focus-visible,
+  #teacher-library-home select:focus-visible { outline: 2px solid var(--tl-green); outline-offset: 3px; }
+  #teacher-library-home .tl-header {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    gap: 8px; padding: 12px clamp(16px, 5vw, 52px); border-bottom: 1px solid var(--tl-border);
+  }
+  #teacher-library-home .tl-brand, #teacher-library-home .tl-nav {
+    background: transparent; border: 0; padding: 8px 2px; min-height: 44px;
+  }
+  #teacher-library-home .tl-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+  #teacher-library-home .tl-nav { color: var(--tl-green); text-decoration: underline; text-underline-offset: 4px; }
+  #teacher-library-home .tl-main { padding: clamp(20px, 5vw, 46px) clamp(16px, 5vw, 52px); }
+  #teacher-library-home .tl-kicker { color: var(--tl-muted); font-size: 13px; letter-spacing: .08em; }
+  #teacher-library-home h1 {
+    color: var(--tl-green); margin: 6px 0 4px; font: 600 clamp(30px, 5.2vw, 52px)/1.2
+      "Noto Serif TC", "PMingLiU", serif;
+  }
+  #teacher-library-home p { color: var(--tl-muted); margin: 8px 0 0; }
+  #teacher-library-home h2 { margin: 0; font: 700 18px/1.4 "Noto Sans TC", "Microsoft JhengHei", sans-serif; }
+  #teacher-library-home .tl-search {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(130px, 170px) auto;
+    gap: 12px; align-items: end; margin: 22px 0 28px;
+  }
+  #teacher-library-home label { display: grid; gap: 5px; font-size: 13px; font-weight: 600; }
+  #teacher-library-home input, #teacher-library-home select {
+    width: 100%; min-height: 44px; padding: 8px 10px; color: var(--tl-ink);
+    background: var(--tl-white); border: 1px solid #a7b5a9; border-radius: 8px; font-size: 16px;
+  }
+  #teacher-library-home input::placeholder { color: var(--tl-muted); }
+  #teacher-library-home .tl-primary {
+    background: var(--tl-green); color: var(--tl-white); border: 1px solid transparent;
+    padding: 8px 16px; border-radius: 8px; min-height: 44px; font-weight: 600;
+  }
+  #teacher-library-home .tl-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 13px;
+  }
+  #teacher-library-home .tl-tile {
+    display: grid; align-content: start; gap: 6px; text-align: start; min-width: 0;
+    min-height: 105px; border-radius: 12px; border: 1px solid var(--tl-border);
+    padding: 14px 15px; background: var(--tl-white); overflow-wrap: anywhere;
+  }
+  #teacher-library-home button.tl-tile:hover { border-color: var(--tl-green); }
+  #teacher-library-home .tl-tile svg { width: 19px; height: 19px; color: var(--tl-green); }
+  #teacher-library-home .tl-tile strong { font-size: 16px; font-weight: 700; }
+  #teacher-library-home .tl-tile span { font-size: 13px; color: var(--tl-muted); }
+  #teacher-library-home .tl-book-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 176px));
+    justify-content: center;
+    align-items: end;
+    gap: clamp(9px, 3vw, 34px);
+    margin-top: 16px;
+    padding: 0 clamp(6px, 5vw, 48px);
+    border-bottom: 9px solid #af8868;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 4px 0 #77573e, 0 8px 12px #77573e24;
+  }
+  #teacher-library-home .tl-book {
+    --book-color: #284c3e;
+    --book-text: #fff9e8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+    min-height: 142px;
+    padding: 15px 10px 13px clamp(12px, 2.3vw, 23px);
+    border: 1px solid #46332545;
+    border-radius: 3px 8px 8px 3px;
+    background:
+      linear-gradient(90deg, #0000002c 0 5px, #ffffff22 6px 8px, transparent 9px),
+      var(--book-color);
+    color: var(--book-text);
+    text-align: start;
+    overflow-wrap: anywhere;
+    box-shadow: 3px 0 #e5d6bb, 5px 2px 7px #38251930;
+    cursor: pointer;
+  }
+  #teacher-library-home .tl-book:hover { transform: translateY(-3px); }
+  #teacher-library-home .tl-book-fern { --book-color: #48604d; }
+  #teacher-library-home .tl-book-clay { --book-color: #704c3d; }
+  #teacher-library-home .tl-book-oat { --book-color: #e5d7b9; --book-text: #3c382c; }
+  #teacher-library-home .tl-book-rust { --book-color: #694337; }
+  #teacher-library-home .tl-book-sage { --book-color: #d7e2d0; --book-text: #294236; }
+  #teacher-library-home .tl-book svg { width: 21px; height: 21px; }
+  #teacher-library-home .tl-book strong { font-size: clamp(14px, 2.2vw, 18px); line-height: 1.25; }
+  #teacher-library-home .tl-book span { font-size: 12px; line-height: 1.4; }
+  #teacher-library-home .tl-result-count { margin: 4px 0 13px; font-size: 13px; }
+  #teacher-library-home .tl-catalog-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  #teacher-library-home .tl-entry {
+    padding: 15px 17px; background: var(--tl-white); border: 1px solid var(--tl-border); border-radius: 9px;
+    overflow-wrap: anywhere;
+  }
+  #teacher-library-home .tl-entry h3 { margin: 0; color: var(--tl-green); font-size: 16px; }
+  #teacher-library-home .tl-entry .tl-plain { color: var(--tl-ink); }
+  #teacher-library-home .tl-entry .tl-scope, #teacher-library-home .tl-entry .tl-kind { font-size: 13px; }
+  #teacher-library-home .tl-entry .tl-sources { margin-top: 8px; padding-inline-start: 1.1em; }
+  #teacher-library-home .tl-source { color: var(--tl-green); text-underline-offset: 3px; }
+  #teacher-library-home .tl-support .tl-primary { margin-top: 20px; }
+  @media (max-width: 610px) {
+    #teacher-library-home .tl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    #teacher-library-home .tl-search { grid-template-columns: minmax(0, 1fr) auto; }
+    #teacher-library-home .tl-search label:first-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 365px) {
+    #teacher-library-home .tl-grid { grid-template-columns: minmax(0, 1fr); }
+    #teacher-library-home .tl-book { min-height: 158px; }
+    #teacher-library-home .tl-book span { display: none; }
+  }
+</style>
+<script>
+  {
+    const library = document.getElementById("teacher-library-home");
+    const form = library.querySelector("form");
+    const main = library.querySelector("[data-main]");
+    const support = library.querySelector("[data-support]");
+    const shelves = library.querySelector("[data-shelves]");
+    const results = library.querySelector("[data-results]");
+    const resultTitle = library.querySelector("[data-result-title]");
+    const resultList = library.querySelector("[data-result-list]");
+    const resultCount = library.querySelector("[data-result-count]");
+    const catalog = /* teacher-catalog:start */
+{
+  "checked": "2026-11-09",
+  "entries": [
+    {
+      "shelf": "教師權益",
+      "title": "正式教師受聘後有哪些基本權利？",
+      "kind": "法律",
+      "roles": [
+        "正式教師"
+      ],
+      "summary": "依法令及學校章則，受聘教師享有待遇、福利、專業自主及參與教師組織等權利。",
+      "scope": "公立或已立案私校編制內、按月支給待遇且依法取得教師資格的專任教師。",
+      "terms": "薪資 待遇 福利 專業自主 受聘 教師組織",
+      "sources": [
+        {
+          "label": "教師法第 3、31 條",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0020040"
+        },
+        {
+          "label": "教師法修正沿革",
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=H0020040"
+        }
+      ]
+    },
+    {
+      "shelf": "教師權益",
+      "title": "代理教師的薪級、保險與退休金",
+      "kind": "法規命令",
+      "roles": [
+        "代理教師"
+      ],
+      "summary": "代理教師待遇包括本薪、加給和獎金。具所代理學段及類科合格教師資格者，提敘薪級比照專任教師。",
+      "scope": "高中職以下代理教師。投保與退休金提繳須依各相關法律的資格辦理。",
+      "terms": "待遇 薪資 薪級 保險 勞保 退休金 提敘",
+      "sources": [
+        {
+          "label": "高級中等以下學校兼任代課及代理教師聘任辦法第 16、16-1 條",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=FL009454"
+        }
+      ]
+    },
+    {
+      "shelf": "教師權益",
+      "title": "教育實習時的指導與保險",
+      "kind": "法規命令",
+      "roles": [
+        "實習教師"
+      ],
+      "summary": "可先查師資培育大學的實習規定與同意書。大學應協助實習學生依規定參加學生團體保險，進行實習時應依規定有指導人員在場。",
+      "scope": "適用教育實習辦法的實習學生。",
+      "terms": "教育實習 師培 同意書 指導 保險",
+      "sources": [
+        {
+          "label": "師資培育之大學及教育實習機構辦理教育實習辦法第 7、10、15 條",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=GL001787"
+        }
+      ]
+    },
+    {
+      "shelf": "校事會議自保",
+      "title": "案件怎麼進到校事會議？",
+      "kind": "法規命令",
+      "roles": [
+        "正式教師",
+        "代理教師",
+        "實習教師"
+      ],
+      "summary": "學校先審查是否受理。依本辦法受理後，學校應在七個工作日內召開校事會議，再按案情決定調查或分流方式。",
+      "scope": "第 9 條的二十日書面通知對象是檢舉人。本辦法適用高中職以下的相關案件。代理教師等涉及解聘、不續聘或終局停聘，教育實習人員等涉及免職、終止契約或終止運用關係時，依第 61 條準用調查程序。",
+      "terms": "檢舉 投訴 受理 流程 七個工作日 分流",
+      "sources": [
+        {
+          "label": "高級中等以下學校教師解聘不續聘停聘或資遣辦法第 9、12、13、61 條",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0060087"
+        },
+        {
+          "label": "修正沿革",
+          "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=H0060087"
+        }
+      ]
+    },
+    {
+      "shelf": "校事會議自保",
+      "title": "收到調查訪談通知，要準備什麼？",
+      "kind": "法規命令",
+      "roles": [
+        "正式教師",
+        "代理教師",
+        "實習教師"
+      ],
+      "summary": "先看書面通知的原因、目的、時間、地點及不配合的效果。當事人可準備相關資料和陳述，訪談時可請至多兩名輔佐人同行。訪談錄音或錄影由學校或調查小組全程辦理，受訪者不得自行錄製。",
+      "scope": "本辦法適用高中職以下的相關案件。代理教師等涉及解聘、不續聘或終局停聘，教育實習人員等涉及免職、終止契約或終止運用關係時，依第 61 條準用調查程序。",
+      "terms": "調查通知 訪談通知 書面通知 輔佐人 陪同 錄音 錄影 陳述",
+      "sources": [
+        {
+          "label": "高級中等以下學校教師解聘不續聘停聘或資遣辦法第 16、19、61 條",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0060087"
+        }
+      ]
+    },
+    {
+      "shelf": "校事會議自保",
+      "title": "調查報告完成後會發生什麼？",
+      "kind": "法規命令",
+      "roles": [
+        "正式教師",
+        "代理教師",
+        "實習教師"
+      ],
+      "summary": "報告交由校事會議審議，後續可能結案、輔導或移送相關委員會。正式教師若在第 43 條所定的教評會或相關委員會陳述，學校至遲七日前應主動提供調查及輔導報告。",
+      "scope": "第 61 條所列代理教師與教育實習人員，在特定情況下準用調查程序。後續會議、終局通知及救濟依身分與措施另查。",
+      "terms": "調查報告 終局書面 教評會 考核會 輔導 救濟流程",
+      "sources": [
+        {
+          "label": "高級中等以下學校教師解聘不續聘停聘或資遣辦法第 22、24、25、43、47–49、61 條",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0060087"
+        }
+      ]
+    },
+    {
+      "shelf": "校事會議自保",
+      "title": "法院如何檢視校事會議調查紀錄？",
+      "kind": "公開裁判",
+      "roles": [],
+      "summary": "國中課堂事件衍生的刑事案件中，法院比對校事會議調查紀錄與不同階段的證詞，二審駁回檢方上訴。",
+      "scope": "事件與校事會議分別發生於民國 112、113 年。此卡供閱讀個案證據，現行校事流程請查同架法規。",
+      "terms": "案例 裁判 調查報告 訪談紀錄 證詞 刑事 判決",
+      "sources": [
+        {
+          "label": "臺灣高等法院高雄分院 115 年度上易字第 234 號刑事判決（115 年 8 月 18 日）",
+          "url": "https://judgment.judicial.gov.tw/FJUD/printData.aspx?id=KSHM%2C115%2C%E4%B8%8A%E6%98%93%2C234%2C20260818%2C1"
+        }
+      ]
+    },
+    {
+      "shelf": "申訴與救濟",
+      "title": "正式教師對學校或主管機關措施不服",
+      "kind": "法律",
+      "roles": [
+        "正式教師"
+      ],
+      "summary": "若個人措施違法或不當而損害權益，可依法提出書面申訴。對措施申訴的期限從收受或知悉的次日起算三十日，以申評會收件日為準。",
+      "scope": "適用教師法的專任教師。依法申請遭逾期不作為、再申訴及訴願競合，另看第 42、44 條。",
+      "terms": "申訴 再申訴 三十日 30日 期限 申評會 訴願 不作為",
+      "sources": [
+        {
+          "label": "教師法第 3、42、44 條",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0020040"
+        }
+      ]
+    },
+    {
+      "shelf": "申訴與救濟",
+      "title": "代理教師哪些措施可準用教師申訴？",
+      "kind": "法規命令",
+      "roles": [
+        "代理教師"
+      ],
+      "summary": "個人待遇、終止聘約、停止聘約執行及退休金的措施，符合條件可準用教師申訴程序。聘期三個月以上的代理教師另包括請假、平時考核與個人服務成績。",
+      "scope": "高中職以下代理教師。準用範圍依第 14 條第 4 款所列措施。",
+      "terms": "申訴 終止聘約 停止聘約 薪資 待遇 退休金 請假 考核",
+      "sources": [
+        {
+          "label": "高級中等以下學校兼任代課及代理教師聘任辦法第 14 條第 4 款",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=FL009454"
+        }
+      ]
+    },
+    {
+      "shelf": "申訴與救濟",
+      "title": "教育實習被終止或對實習成績有疑義",
+      "kind": "法規命令",
+      "roles": [
+        "實習教師"
+      ],
+      "summary": "對實習終止或成績評定不服，可從收到通知的次日起三十日內，備具理由向師資培育大學提出申訴。",
+      "scope": "適用教育實習辦法的實習學生。後續救濟依措施的法律性質區分。",
+      "terms": "申訴 30日 三十日 實習成績 終止實習 師培",
+      "sources": [
+        {
+          "label": "師資培育之大學及教育實習機構辦理教育實習辦法第 20 條",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=GL001787"
+        }
+      ]
+    },
+    {
+      "shelf": "法律協助",
+      "title": "疑似不適任調查期間的法律諮詢",
+      "kind": "行政規則",
+      "roles": [
+        "正式教師",
+        "代理教師"
+      ],
+      "summary": "國教署補助地方政府辦理法律諮詢。作業要點所定範圍是依法組成調查小組開始調查，到完成調查報告為止。可向所在地教育主管機關查詢辦理方式。",
+      "scope": "地方政府所屬公私立高中職以下學校的專任、兼任、代課及代理教師，並須符合調查程序條件。",
+      "terms": "校事會議 法律諮詢 律師 不適任 調查中 教育局 補助",
+      "sources": [
+        {
+          "label": "國教署補助地方政府辦理教師法律諮詢作業要點第 2–4 點",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=GL002420"
+        }
+      ]
+    },
+    {
+      "shelf": "法律協助",
+      "title": "依法執行職務涉訟，何時可請學校協助？",
+      "kind": "法律與法規命令",
+      "roles": [
+        "正式教師",
+        "代理教師"
+      ],
+      "summary": "因依法執行職務涉及民事或刑事案件，符合條件時可由服務學校延聘律師，或自行延聘後檢具證明申請費用。",
+      "scope": "適用教師法的專任教師，以及依代理聘任辦法準用者。與服務學校涉訟，以及因故意或重大過失所致等情形，應查相關排除規定。",
+      "terms": "涉訟 律師 訴訟 刑事 民事 因公 輔助 法律協助",
+      "sources": [
+        {
+          "label": "教師法第 31 條",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0020040"
+        },
+        {
+          "label": "教師因公涉訟輔助辦法第 2–9 條",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=GL001407"
+        },
+        {
+          "label": "兼任代課及代理教師聘任辦法第 14 條第 6 款",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=FL009454"
+        }
+      ]
+    },
+    {
+      "shelf": "親師溝通與校園事件",
+      "title": "國中小家長對輔導或管教提出建議",
+      "kind": "法規命令",
+      "roles": [
+        "正式教師",
+        "代理教師"
+      ],
+      "summary": "家長或家長會可對教學、輔導管教及評量等事項提出建議。學校或教師接獲後應主動溝通協調，視情況採適當措施或提出說明。",
+      "scope": "國民教育階段。這是親師溝通及建議處理規定，若另涉及正式檢舉，應辨識所走的程序。",
+      "terms": "家長 家長會 親師 投訴 管教 評量 溝通 國小 國中",
+      "sources": [
+        {
+          "label": "國民教育階段家長參與教育事務辦法第 7 條",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=FL039743"
+        }
+      ]
+    },
+    {
+      "shelf": "親師溝通與校園事件",
+      "title": "課堂管教何時可請學務或輔導協助？",
+      "kind": "行政規則",
+      "roles": [
+        "正式教師"
+      ],
+      "summary": "教育部指引說明一般管教措施的衡量方式。一般措施無效，或學生明顯不服管教且妨害現場活動時，可依規定請學務或輔導單位協助。",
+      "scope": "教育部供學校訂定校內辦法的指引。第 4 點的教師定義為編制內專任，實際處理另核對學校現行辦法。",
+      "terms": "班級秩序 輔導 管教 家長 學務 輔導室 校規",
+      "sources": [
+        {
+          "label": "學校訂定教師輔導與管教學生辦法注意事項第 4、23–26 點",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=GL002147"
+        },
+        {
+          "label": "國民小學及國民中學學生獎懲準則第 7、8 條",
+          "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0070094"
+        }
+      ]
+    },
+    {
+      "shelf": "親師溝通與校園事件",
+      "title": "疑似校園霸凌，先查通報與分流",
+      "kind": "法規命令",
+      "roles": [
+        "正式教師",
+        "代理教師",
+        "實習教師"
+      ],
+      "summary": "知悉疑似校園霸凌時，依準則向校內權責人員通報，由權責人員依法向主管機關通報。高中職以下師對生與生對生事件採不同調查路徑。",
+      "scope": "本準則的教師定義包含代理教師及實際執行教學的教育實習人員。後續依事件類型、角色與程序條件辦理。",
+      "terms": "霸凌 校園事件 師對生 生對生 通報 24小時",
+      "sources": [
+        {
+          "label": "校園霸凌防制準則第 4、5、7、17、19 條",
+          "url": "https://edu.law.moe.gov.tw/LawContent.aspx?id=GL000683"
+        }
+      ]
+    }
+  ]
+}
+    /* teacher-catalog:end */;
+
+    function renderEntry(entry) {
+      const row = document.createElement("li");
+      row.className = "tl-entry";
+      const heading = document.createElement("h3");
+      heading.textContent = entry.title;
+      const plain = document.createElement("p");
+      plain.className = "tl-plain";
+      plain.textContent = entry.summary;
+      const scope = document.createElement("p");
+      scope.className = "tl-scope";
+      scope.textContent = entry.roles.length ? "適用範圍｜" + entry.scope : "個案背景｜" + entry.scope;
+      const kind = document.createElement("p");
+      kind.className = "tl-kind";
+      kind.textContent = entry.kind + " · " + entry.shelf;
+      const sources = document.createElement("ul");
+      sources.className = "tl-sources";
+      for (const source of entry.sources) {
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        link.className = "tl-source";
+        link.href = source.url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = source.label;
+        item.append(link);
+        sources.append(item);
+      }
+      row.append(heading, plain, scope, kind, sources);
+      return row;
+    }
+
+    function showResults(title, entries) {
+      resultTitle.textContent = title;
+      resultCount.textContent = entries.length
+        ? entries.length + " 筆館藏 · 法源查證 " + catalog.checked
+        : "沒有符合的條目。可以換個關鍵字，或把身分切回「全部身分」。";
+      resultList.replaceChildren(...entries.map(renderEntry));
+      shelves.hidden = true;
+      results.hidden = false;
+      results.querySelector("button").focus();
+    }
+
+    function showHome() {
+      support.hidden = true;
+      main.hidden = false;
+      results.hidden = true;
+      shelves.hidden = false;
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const keywords = form.elements.query.value.normalize("NFKC").trim().toLowerCase().split(/\s+/).filter(Boolean);
+      const role = form.elements.role.value;
+      showResults("查館藏結果", catalog.entries.filter((entry) => {
+        const text = [
+          entry.title, entry.shelf, entry.summary, entry.scope, entry.terms,
+          ...entry.roles, ...entry.sources.map((source) => source.label)
+        ].join(" ").normalize("NFKC").toLowerCase();
+        return (!role || entry.roles.includes(role)) && keywords.every((word) => text.includes(word));
+      }));
+    });
+    library.querySelectorAll("[data-shelf]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const shelf = button.dataset.shelf;
+        const role = form.elements.role.value;
+        showResults(shelf, catalog.entries.filter((entry) => entry.shelf === shelf && (!role || entry.roles.includes(role))));
+      });
+    });
+    library.querySelectorAll("[data-breathe]").forEach((button) => {
+      button.addEventListener("click", () => {
+        main.hidden = true;
+        support.hidden = false;
+        support.querySelector("button").focus();
+      });
+    });
+    library.querySelectorAll("[data-home], [data-clear]").forEach((button) => {
+      button.addEventListener("click", () => {
+        showHome();
+        form.elements.query.focus();
+      });
+    });
+  }
+</script>
+
+<!-- ISC License. Copyright (c) 2026 Lucide Icons and Contributors.
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies. -->
+</body>
+</html>
